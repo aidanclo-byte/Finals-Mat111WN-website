@@ -1058,11 +1058,10 @@ function changeMusic(newMusic) {
     currentMusic = newMusic;
 
     if (currentMusic) {
-       currentMusic.setLoop(true);
-const vol = document.getElementById("vol");
-currentMusic.setVolume(parseFloat(vol.value));
-currentMusic.play();
-    }
+    const vol = document.getElementById("vol");
+    currentMusic.setVolume(parseFloat(vol.value));
+    currentMusic.loop();
+}
 }
 
 function goToScene(newScene) {
