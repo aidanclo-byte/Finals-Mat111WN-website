@@ -326,9 +326,9 @@ scale(scaleFactor);
 
   if (scene != 3) {
   drawNextButton()
-
+pop()
 }
-
+push()
   if (dialogueVisible) {
 
     fill(255, 235);
