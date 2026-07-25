@@ -328,9 +328,9 @@ scale(scaleFactor);
   drawNextButton()
 
 }
-pop()
+
   if (dialogueVisible) {
-push()
+
     fill(255, 235);
     stroke(0);
     strokeWeight(2);
