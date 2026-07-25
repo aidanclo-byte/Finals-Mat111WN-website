@@ -166,7 +166,7 @@ document.getElementById("toggle-sound").addEventListener("click", async () => {
 
     if (!currentMusic) return;
 
-    if (currentMusic.isPlaying()) {
+    if (musicEnabled) {
         currentMusic.stop();
         musicEnabled = false;
     } else {
@@ -1044,19 +1044,19 @@ function drawNextButton() {
 
 //changing music
 let currentMusic = null;
+let musicEnabled = false;
 
 function changeMusic(newMusic) {
 
     if (currentMusic === newMusic) return;
 
-    if (currentMusic && currentMusic.isPlaying()) {
+    if (currentMusic) {
         currentMusic.stop();
     }
 
     currentMusic = newMusic;
 
     if (currentMusic) {
-        currentMusic.setLoop(true);
 
         const vol = document.getElementById("vol");
         currentMusic.setVolume(parseFloat(vol.value));
