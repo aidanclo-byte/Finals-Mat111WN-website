@@ -195,8 +195,11 @@ canvas {
     }
 
     #rightBottom {
-        top: 75%;
-        height: 25%;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    box-sizing: border-box;
+}
 
 }
