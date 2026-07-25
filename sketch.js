@@ -162,7 +162,7 @@ vol.addEventListener("input", () => {
 // ADD: play/stop button
 document.getElementById("toggle-sound").addEventListener("click", async () => {
 
-    await userStartAudio();
+    
 
     console.log(
         "Button clicked",
