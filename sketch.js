@@ -1045,7 +1045,7 @@ function drawNextButton() {
 }
 
 //changing music
-let currentMusic = null;
+
 
 function changeMusic(newMusic) {
 
