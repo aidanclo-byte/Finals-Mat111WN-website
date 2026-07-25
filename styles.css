@@ -121,7 +121,7 @@ canvas {
     padding: 8px 12px;
     border-radius: 8px;
     backdrop-filter: blur(4px);
-    margin: 8px auto 20px;
+    margin: 0;
 }
 
 @media (orientation: portrait) and (max-width: 700px) {
