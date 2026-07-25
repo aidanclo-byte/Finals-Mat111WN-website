@@ -175,8 +175,6 @@ canvas {
         overflow-y: hidden;
     }
 
-    /* LEFT SIDE */
-
     #leftTop {
         height: 30%;
     }
@@ -184,12 +182,9 @@ canvas {
     #leftBottom {
         top: 30%;
         height: 70%;
-
         overflow-y: auto;
         padding: 12px;
     }
-
-    /* RIGHT SIDE */
 
     #rightTop {
         height: 12%;
@@ -198,22 +193,18 @@ canvas {
     #rightMiddle {
         top: 12%;
         height: 68%;
-
         display: flex;
         justify-content: center;
         align-items: center;
-
         overflow: hidden;
     }
 
     #rightBottom {
         top: 80%;
         height: 20%;
-
         display: flex;
         justify-content: center;
         align-items: center;
-
         padding: 4px;
     }
 
@@ -222,28 +213,25 @@ canvas {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-
         gap: 6px;
         margin: 0;
-
         width: 100%;
     }
 
-    /* Smaller text */
 
     #leftTop h1 {
         font-size: 1.5rem;
-        margin: .2rem 0;
+        margin: 0.2rem 0;
     }
 
     #leftTop h2 {
         font-size: 1rem;
-        margin: .2rem 0;
+        margin: 0.2rem 0;
     }
 
     #leftTop p {
         font-size: .8rem;
-        margin: .2rem 0;
+        margin: 0.2rem 0;
     }
 
     #leftBottom h2 {
@@ -258,13 +246,13 @@ canvas {
 
     #rightTop h1 {
         font-size: 1.2rem;
-        margin: .2rem 0;
+        margin: 0.2rem 0;
     }
 
     #rightBottom button,
     #rightBottom label,
     #volVal {
-        font-size: .75rem;
+        font-size: 0.75rem;
     }
 
     #vol {
