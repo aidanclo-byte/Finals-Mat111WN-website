@@ -1,7 +1,7 @@
 <!-- 
- * Title: Final Project Submission
+ * Title: Weekly assignment #4
  * Author: Aidan Lo
- * Date: Saturday, July 25th, 2026
+ * Date: Sunday July 19th, 2026
  *
  * AI Use Appendix:
  *
@@ -9,29 +9,24 @@
  * ChatGPT (OpenAI)
  *
  * 2. Purpose of AI use:
- * I used ChatGPT to assist with creating a clean framework for manyof my functions, including, but not limited to, draw(), dialogue, and mousePressed().
- * I used ChatGPT to assist with reworking my css media quieries so I could pull on them for both landscape and portrait on phone with proper formatting. 
- * I used ChatGPT to assist with reworking and debugging my audio functions since they were not functioning cleanly on either phone or laptop, particularly phone. 
- * I used ChatGPT to assist with setting up proper backgrounds and movements for some of my scenes. 
- *
+ * I used ChatGPT to assist with debugigng my scaling of my sketch to the window portion I wanted. 
+ * I used ChatGPT to assist with setting up a global framework to scale everything in the canvas sketch in chunks instead of manually replacing each drawn shape and image with width and height. 
+ * I used ChatGPT to assist with ensuring my words scaled in size with the window sizes permitted for parts outside of the sketch.
+ * 
  * 3. Selected prompt(s) or conversation link/export:
- * For assistance with clean framework of my functions, I asked it how it would set up a clean framework for each function and capability I wanted for each thing I wanted in the website, supplying it a basic framework(s) we had created in class. 
- * For assistannce with reworking my css media quieiries, I asked it why some items were bleeding out of their windows on landscape phone and portrait phone, supplying it a modified version of my code. 
- * For assistance with reworking and debugging my audio functions, I asked it if there were functions or lines of code notorious for causing audio to not play on safari or on phones, plus what functions could make audio not automatically play. 
- * For assistance with setting up proper backgrounds and movements for some of my scenes, I asked it what were some aesthetics that could work for a vertically stretched window on laptop. I also asked it how I could scale my movements of some images, since I was using scale() and translate() to ensure that my sketch shapes were drawn correctly anyways. 
-* 
+ * For assistance with setting up the global framework to scale everything, I asked it why using windowHeight/Width was causing the canvas sketch to extend beyond the immediate window, and how to fix it. It suggested using other constants besides windowWidth since windowWidth could extend beyond the immediate window on some browsers (like google chrome).
+ * For assistance with setting up the global framework, I asked it how I could set up a global framework that applied to all drawn functions in draw() universally without needing to use things like windowWidth/Height in hundreds of lines of code. This included mousePressed() and particles (the rain). It suggested creating and using some new functions and constants based on the current window's height and "original" canvas sketch without actually invoking windowHeight/Width, then pairing them with push() and pop() in draw() to influence all functions invoked in draw() (which are all the functions with info that needed to be drawn for each scene).
+ * For assistance with ensuring my words scaled in size with window sizes permitted, I asked ChatGPT if there were ways to scale text font sizes without using px. It suggested creating and using clamp() with rem and vw for 2 windows partitions, so if the window as a whole shrunk each partition would shrink their text accordingly. 
+ * 
  * 4. What I accepted, rejected, or changed:
- * For the clean framework, I accepted various suggested frameworks including, but not limited to, only putting functions inside my draw() so it would have less to code, and using independent functions for each scene. This also applied to audio, dialogue, and mousePressed(), since they also required their own functions and constants to function properly. I did change them to fit my code and intentions. 
- * For the reworking my css media quieiries, I learned that I needed to set hard boundaries on my window size (kinda) and that I could have more than one media inquiry. I also learned that I could adjust fonts in each media queiry instead of globally, which helped with converting to phone in both portrait and especially landscape. I accepted its suggested framework of replicating my global window parts into each query, modifying them to use my own data and code. 
- * For reworking and debugging my audio functions, I learned that currentMusic.play(); would be blocked by browsers, but userStartAudio(); would not, so I implemented the latter. I also implemented await userStartAudio(); at its suggestion to ensure clean audio playing between scenes and reduce the chances of sounds bleeding over. I also replaced much of my music functions at its suggestion, creating a few new variables to ensure that music was called upon in each scene automatically. 
- * For setting up backgrounds and movements, I asked it how I could translate my images, and it sent some example translations. I accepted the concept of directly implementing variables and modifying them immediately in some functions, and I accepted the idea of using colored rectangles/images above and below to cover up bad coloring when windows are resized on laptop. 
+ * For scaling the sketchg, I accepted the suggestion to use a few new global constants and functions like offsetWidth and using sketchDiv.(stuff). I modified the suggested frameworks to use my own "sketch" and began applying them to stretch the canvas sketch to the size "permitted" in CSS. This let me modify 
+ * For scaling everything else in the sketch, I accepted the suggestion of using the new variables I created like scaleFactor, BASE_W, and offset) and manipulating them (such as BASE_W + (2 * offsetX) / scaleFactor) to stretch out certain drawn shapes.I also accepted replacing my old mousePressed variables with new ones since the old ones accomodated a non-stretching sketch, but the new ones (which I called mx and my) could using similar manipulations of scaleFactor and offset. This was especially useful for drawn shapes and imaegs in the "background", like the hills at the end of each pathway (scenes 7 and 11) and some background images (like in scene 1). I also accepted the suggestion to use push() and pop() to surround my draw() functions, but of course used it to surround my more numerous functions than chatgpt had anticipated.  
+ * For ensuring that my words scaled in size with window sizes permitted, I accepted the suggestion of using clamp(), rem, and vw, since by using those three in conjunction I could establish a minimum and maximum font size based on window size instead of raw numbers I inputted. I, however, changed the exact numbers suggested, given thatthey were fro a differently sized web browser window partitioning, and added in multiple more clamps to accomodate having more than 2 segments with words in them. 
  * 
  * 5. Testing and verification:
- * 
- * When I used the new clean frameworks, I repeatedly had to pause and debug due to typos, and thus tested line by line if my sketch was loading or not, and if so, how far was it stretching. Eventually, it settled on where it stretches today, with a slightmargin. 
- * When I used the new css media queries, I tested it repeatedly on phone (phone in one hand, laptop with another) and repeatedly scrolling up and down to make sure that the new media queries worked on both landscape and portrait, especially with the "new" parts in each query. This included font sizes in each window part in each queiry. 
- * When I used userStartAudio() instead of currentmusic.play(), I tested it on both laptop and phone with resized window sizes and changing phone orientations. I also created and tested the new variables a few handful at a time (2 at a time) in both phone and laptop in multiple variations. 
- * When I set up the translations, I extensively tested the motions and their appearances on both laptop and phone in multiple variations (window size, landscape, etc). If it was janky, I debugged it.
+ * When I used the new offsets and sketchDivs, I repeatedly had to pause and debug due to typos, and thus tested line by line if my sketch was loading or not, and if so, how far was it stretching. Eventually, it settled on where it stretches today, with a slightmargin. 
+ * When I used push() pop() translate() and the other new functions and constants, I similarly tested it line by line by checking if the images/shapes stretched correctly by changing my own browser's window size. If it stretched correctly, I moved on. If not, I went back to debug, then changed browser window size again. This was especially true for mousePressed() since I was replacing the crucial regions that the Next button checked for clicks at, including minimizing my browser window to its absolute smallest and testing if it still changed scenes. 
+ * When I used clamp(), rem, and vw, I tested numerous numbers in clamp() for each vw and rem. 
  * 
  * Final authorship statement:
  * The final project reflects my own narrative concept, design judgment, technical understanding,

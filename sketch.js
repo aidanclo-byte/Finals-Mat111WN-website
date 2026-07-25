@@ -1049,19 +1049,19 @@ let currentMusic = null;
 
 function changeMusic(newMusic) {
 
-    if (currentMusic) {
+    if (currentMusic === newMusic) return;
+
+    if (currentMusic && currentMusic.isPlaying()) {
         currentMusic.stop();
     }
 
     currentMusic = newMusic;
 
     if (currentMusic) {
-        const vol = document.getElementById("vol");
-        currentMusic.setVolume(parseFloat(vol.value));
-
-        if (musicOn) {
-            currentMusic.loop();
-        }
+       currentMusic.setLoop(true);
+const vol = document.getElementById("vol");
+currentMusic.setVolume(parseFloat(vol.value));
+currentMusic.play();
     }
 }
 
