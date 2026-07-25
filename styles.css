@@ -169,7 +169,34 @@ canvas {
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
-body{
-    overflow-x:hidden;
-}
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #leftTop {
+        height: 48%;
+    }
+
+    #leftBottom {
+        top: 48%;
+        height: 52%;
+        overflow-y: auto;
+        padding: 15px;
+    }
+
+    #rightTop {
+        height: 15%;
+    }
+
+    #rightMiddle {
+        top: 15%;
+        height: 60%;
+    }
+
+    #rightBottom {
+        top: 75%;
+        height: 25%;
+    }
+
 }
