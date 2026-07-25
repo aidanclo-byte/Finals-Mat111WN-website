@@ -97,13 +97,13 @@ canvas {
 }
 /* Bottom controls */
 #rightBottom button{
-    font-size: clamp(0.1rem, 1.8vw, 2rem);
+    font-size: clamp(0.01rem, 1.8vw, 2rem);
 }
 #rightBottom label{
-    font-size: clamp(0.1rem, 1.8vw, 2rem);
+    font-size: clamp(0.01rem, 1.8vw, 2rem);
 }
 #volVal{
-    font-size: clamp(0.1rem, 1.8vw, 2rem);
+    font-size: clamp(0.01rem, 1.8vw, 2rem);
 }
 
 
