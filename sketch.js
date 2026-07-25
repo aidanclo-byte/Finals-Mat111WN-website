@@ -158,15 +158,18 @@ vol.addEventListener("input", () => {
 });
 
 // ADD: play/stop button
-document.getElementById("toggle-sound").addEventListener("click", () => {
+document.getElementById("toggle-sound").addEventListener("click", async () => {
 
-    if (!currentMusic) return
-    if (!currentMusic.isPlaying()) {
-        currentMusic.play()
-        currentMusic.setLoop(true)
-    } else {
+    await userStartAudio();
+
+    console.log(getAudioContext().state);
+
+    if (!currentMusic) return;
+
+    if (currentMusic.isPlaying()) {
         currentMusic.stop();
-
+    } else {
+        currentMusic.loop();
     }
 
 });
@@ -1054,7 +1057,7 @@ function changeMusic(newMusic) {
        currentMusic.setLoop(true);
 const vol = document.getElementById("vol");
 currentMusic.setVolume(parseFloat(vol.value));
-currentMusic.play();
+//currentMusic.play();
     }
 }
 
