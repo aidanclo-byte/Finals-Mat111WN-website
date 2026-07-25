@@ -357,7 +357,7 @@ if (dialogueVisible) {
 
     pop();
 
-
+  }
 }
 
 
