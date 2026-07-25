@@ -44,6 +44,8 @@ let scene1womanscream
 let stressedheartbeat
 let ambulancesiren;
 let buttonsound;
+let currentMusic = null;
+let musicOn = false;
 
 // button stuff
 let buttonX = 500
@@ -158,15 +160,20 @@ vol.addEventListener("input", () => {
 });
 
 // ADD: play/stop button
-document.getElementById("toggle-sound").addEventListener("click", () => {
+document.getElementById("toggle-sound").addEventListener("click", async () => {
 
-    if (!currentMusic) return
-    if (!currentMusic.isPlaying()) {
-        currentMusic.play()
-        currentMusic.setLoop(true)
+    await userStartAudio();
+
+    musicOn = !musicOn;
+
+    if (musicOn) {
+        if (currentMusic) {
+            currentMusic.loop();
+        }
     } else {
-        currentMusic.stop();
-
+        if (currentMusic) {
+            currentMusic.stop();
+        }
     }
 
 });
@@ -1042,19 +1049,19 @@ let currentMusic = null;
 
 function changeMusic(newMusic) {
 
-    if (currentMusic === newMusic) return;
-
-    if (currentMusic && currentMusic.isPlaying()) {
+    if (currentMusic) {
         currentMusic.stop();
     }
 
     currentMusic = newMusic;
 
     if (currentMusic) {
-       currentMusic.setLoop(true);
-const vol = document.getElementById("vol");
-currentMusic.setVolume(parseFloat(vol.value));
-currentMusic.play();
+        const vol = document.getElementById("vol");
+        currentMusic.setVolume(parseFloat(vol.value));
+
+        if (musicOn) {
+            currentMusic.loop();
+        }
     }
 }
 
