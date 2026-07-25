@@ -167,3 +167,9 @@ canvas {
         min-height: 400px;
     }
 }
+
+@media (orientation: landscape) and (max-height: 500px) {
+body{
+    overflow-x:hidden;
+}
+}
