@@ -332,10 +332,9 @@ scale(scaleFactor);
 
 if (dialogueVisible) {
 
-    push();
+  
 
-    translate(offsetX, offsetY);
-    scale(scaleFactor);
+    
 
     fill(255, 235);
     stroke(0);
