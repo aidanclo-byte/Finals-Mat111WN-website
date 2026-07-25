@@ -44,6 +44,8 @@ let scene1womanscream
 let stressedheartbeat
 let ambulancesiren;
 let buttonsound;
+let currentMusic = null;
+let musicEnabled = false;
 
 // button stuff
 let buttonX = 500
@@ -162,14 +164,14 @@ document.getElementById("toggle-sound").addEventListener("click", async () => {
 
     await userStartAudio();
 
-    console.log(getAudioContext().state);
-
     if (!currentMusic) return;
 
     if (currentMusic.isPlaying()) {
         currentMusic.stop();
+        musicEnabled = false;
     } else {
         currentMusic.loop();
+        musicEnabled = true;
     }
 
 });
@@ -1054,10 +1056,14 @@ function changeMusic(newMusic) {
     currentMusic = newMusic;
 
     if (currentMusic) {
-       currentMusic.setLoop(true);
-const vol = document.getElementById("vol");
-currentMusic.setVolume(parseFloat(vol.value));
-//currentMusic.play();
+        currentMusic.setLoop(true);
+
+        const vol = document.getElementById("vol");
+        currentMusic.setVolume(parseFloat(vol.value));
+
+        if (musicEnabled) {
+            currentMusic.loop();
+        }
     }
 }
 
