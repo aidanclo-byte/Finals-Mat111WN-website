@@ -332,17 +332,16 @@ scale(scaleFactor);
 
 if (dialogueVisible) {
 
+    push();
+
+    translate(offsetX, offsetY);
+    scale(scaleFactor);
+
     fill(255, 235);
     stroke(0);
     strokeWeight(2);
 
-    rect(
-        20,
-        20,
-        BASE_W - 40,
-        120,
-        15
-    );
+    rect(20, 20, 560, 120, 15);
 
     noStroke();
     fill(0);
@@ -353,10 +352,11 @@ if (dialogueVisible) {
         currentDialogue[dialogueIndex],
         40,
         30,
-        BASE_W - 80
+        520
     );
-}
-pop()
+
+    pop();
+
 
 }
 
