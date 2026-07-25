@@ -330,23 +330,31 @@ scale(scaleFactor);
 
 }
 
-  if (dialogueVisible) {
+if (dialogueVisible) {
 
     fill(255, 235);
     stroke(0);
     strokeWeight(2);
-    rect(20, 20, 560, 120, 15);
+
+    rect(
+        20,
+        20,
+        BASE_W - 40,
+        120,
+        15
+    );
+
     noStroke();
     fill(0);
     textSize(18);
     textAlign(LEFT, TOP);
-    text(
-    currentDialogue[dialogueIndex],
-    40,
-    30,
-    520
-);
 
+    text(
+        currentDialogue[dialogueIndex],
+        40,
+        30,
+        BASE_W - 80
+    );
 }
 pop()
 
