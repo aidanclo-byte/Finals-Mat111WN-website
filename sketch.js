@@ -335,17 +335,17 @@ scale(scaleFactor);
     fill(255, 235);
     stroke(0);
     strokeWeight(2);
-    rect(20, height-580, width-40, 120, 15);
+    rect(20, 20, 560, 120, 15);
     noStroke();
     fill(0);
     textSize(18);
     textAlign(LEFT, TOP);
     text(
-        currentDialogue[dialogueIndex],
-        40,
-        height-570,
-        width-80
-    );
+    currentDialogue[dialogueIndex],
+    40,
+    30,
+    520
+);
 
 }
 pop()
