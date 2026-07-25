@@ -1110,6 +1110,7 @@ function goToScene(newScene) {
 //note, sketchMouse stuff above draw()
   // Check if button was clicked
   function mousePressed() {
+      console.log("mousePressed fired");
     let mx = sketchMouseX();
     let my = sketchMouseY();
 
