@@ -284,12 +284,7 @@ function sketchMouseY() {
 function draw() {
 
 background(255)
-fill("red");
-noStroke();
-textSize(20);
-text(`width=${width}`, 20, 20);
-text(`height=${height}`, 20, 45);
-text(`offsetY=${offsetY}`, 20, 70);
+
 //rescaling 
   
 
