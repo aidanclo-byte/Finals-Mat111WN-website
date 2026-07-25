@@ -1298,6 +1298,8 @@ function nextClicked() {
     dialogueVisible = true;
 }
 function nextDialogue() {
+console.trace("nextDialogue called");
+
     dialogueIndex++;
     if (dialogueIndex >= currentDialogue.length) {
         dialogueVisible = false;
