@@ -1057,7 +1057,7 @@ function changeMusic(newMusic) {
        currentMusic.setLoop(true);
 const vol = document.getElementById("vol");
 currentMusic.setVolume(parseFloat(vol.value));
-//currentMusic.play();
+currentMusic.play();
     }
 }
 
