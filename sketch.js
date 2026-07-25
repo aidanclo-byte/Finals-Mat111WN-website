@@ -328,8 +328,7 @@ scale(scaleFactor);
   drawNextButton()
 
 }
-pop()
-push()
+
   if (dialogueVisible) {
 
     fill(255, 235);
@@ -346,8 +345,9 @@ push()
         height-570,
         width-80
     );
-pop()
+
 }
+pop()
 
 }
 
