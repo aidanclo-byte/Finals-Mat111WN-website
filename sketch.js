@@ -142,6 +142,8 @@ let c = createCanvas(
 
 c.parent("sketch");
 
+c.mousePressed(canvasMousePressed);
+
 // ADD: volume slider hookup
 const vol = document.getElementById('vol')
 const volVal = document.getElementById('volVal')
@@ -1109,7 +1111,7 @@ function goToScene(newScene) {
 }
 //note, sketchMouse stuff above draw()
   // Check if button was clicked
-  function mousePressed() {
+  function canvasMousePressed() {
       console.log("mousePressed fired");
     let mx = sketchMouseX();
     let my = sketchMouseY();
