@@ -713,7 +713,7 @@ image(img, childX1, childY1, 50, 50)
   }
 }
 function drawScene6() {
-
+push()
 fill(240,239,235)
 rect(-offsetX/scaleFactor, -1000, BASE_W + (2*offsetX)/scaleFactor,1000)
 image(
@@ -739,6 +739,7 @@ image(
       flowerMoving = false
     }
     }
+    pop()
   }
 
 function drawScene7() {
