@@ -164,16 +164,20 @@ document.getElementById("toggle-sound").addEventListener("click", async () => {
 
     await userStartAudio();
 
-    musicOn = !musicOn;
+    console.log(
+        "Button clicked",
+        "playing:", currentMusic?.isPlaying(),
+        currentMusic
+    );
 
-    if (musicOn) {
-        if (currentMusic) {
-            currentMusic.loop();
-        }
+    if (!currentMusic) return;
+
+    if (currentMusic.isPlaying()) {
+        console.log("Stopping");
+        currentMusic.stop();
     } else {
-        if (currentMusic) {
-            currentMusic.stop();
-        }
+        console.log("Looping");
+        currentMusic.loop();
     }
 
 });
@@ -1048,6 +1052,8 @@ function drawNextButton() {
 
 
 function changeMusic(newMusic) {
+
+  console.log("changeMusic called", newMusic);
 
     if (currentMusic === newMusic) return;
 
